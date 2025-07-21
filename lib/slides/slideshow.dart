@@ -54,7 +54,6 @@ class SlideshowState extends State<Slideshow> {
           builder: (context, slidesProvider, child) {
             final slide = slidesProvider.currentSlide;
             final step = slidesProvider.stepIndex;
-            final visibleContents = slide.content.sublist(0, step + 1);
 
             return Scaffold(
               body: Container(
@@ -73,12 +72,22 @@ class SlideshowState extends State<Slideshow> {
                 child: Align(
                   alignment: slide.alignment,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: slide.alignment.toMainAxis,
+                    crossAxisAlignment: slide.alignment.toCrossAxis,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      ...visibleContents.map(
-                        (content) => ContentWidget(content: content),
-                      ),
+                      ...slide.content.asMap().entries.map((entry) {
+                        final index = entry.key;
+                        final content = entry.value;
+                        return Visibility(
+                          visible: index <= step,
+                          replacement: Opacity(
+                            opacity: 0,
+                            child: ContentWidget(content: content),
+                          ),
+                          child: ContentWidget(content: content),
+                        );
+                      }),
                     ],
                   ),
                 ),
@@ -88,5 +97,19 @@ class SlideshowState extends State<Slideshow> {
         ),
       ),
     );
+  }
+}
+
+extension on Alignment {
+  MainAxisAlignment get toMainAxis {
+    if (y < 0) return MainAxisAlignment.start;
+    if (y > 0) return MainAxisAlignment.end;
+    return MainAxisAlignment.center;
+  }
+
+  CrossAxisAlignment get toCrossAxis {
+    if (x < 0) return CrossAxisAlignment.start;
+    if (x > 0) return CrossAxisAlignment.end;
+    return CrossAxisAlignment.center;
   }
 }

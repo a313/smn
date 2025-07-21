@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smn/slides/widgets/timeline_widget.dart';
 
 import '../slide.dart';
 import 'chart_widget.dart';
@@ -25,6 +26,7 @@ class ContentWidget extends StatelessWidget {
       ),
       ChartContent(:final chart) => ChartWidget(chart: chart),
       TableContent(:final table) => TableWidget(table: table),
+      TimelineContent(:final data) => TimelineWidget(data: data),
     };
   }
 }
