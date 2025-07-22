@@ -393,17 +393,16 @@ final slides = [
         ),
         TimelineData(
           datetime: "2017",
-          title: "Ứng dụng thương mại Flutter đầu tiên",
+          title: "First Commercial App",
           contents: [
             "Ứng dụng Hamilton là ứng dụng Flutter đầu tiên ngoài Google",
-            "Phát triển và ra mắt trên chỉ trong vòng ba tháng",
-            "Với 500k+ active user, 3.5M lượt tải",
+            "Phát triển và ra mắt trên chỉ trong vòng ba tháng với 500k+ active user, 3.5M lượt tải",
           ],
           color: Colors.redAccent,
         ),
         TimelineData(
           datetime: "4/12/2018",
-          title: "Flutter 1.0 - Phiên bản ổn định đầu tiên",
+          title: "Flutter 1.0",
           contents: [
             "Phát hành chính thức tại sự kiện Flutter Live '18 ở London",
             "Giới thiệu Hot Reload và Add-to-App features",
@@ -413,31 +412,20 @@ final slides = [
         ),
         TimelineData(
           datetime: "5/2019",
-          title: "Flutter for Web và macOS tại Google I/O '19",
+          title: "Flutter for Web và macOS",
           contents: [
-            "Ứng dụng KENKEN của New York Times - một trong những ứng dụng Flutter web lớn đầu tiên",
             "Mở rộng hỗ trợ cho web và macOS (alpha)",
             "Giới thiệu dự án Hummingbird để đưa Flutter lên web",
           ],
           color: Colors.orange,
         ),
-        TimelineData(
-          datetime: "12/2019",
-          title: "Flutter 1.12 tại Flutter Interact",
-          contents: [
-            "Cải thiện hỗ trợ iOS và tính năng add-to-app",
-            "Phát hành beta Flutter cho web",
-            "Công bố alpha Flutter cho macOS",
-          ],
-          color: Colors.purple,
-        ),
+
         TimelineData(
           datetime: "3/2021",
           title: "Flutter 2.0",
           contents: [
-            "Hỗ trợ iOS, Android, web, macOS, Windows và Linux",
+            "Hỗ trợ thêm web, macOS, Windows và Linux",
             "Ra mắt Dart 2.12 với null safety",
-            "Hỗ trợ desktop ở mức early access",
           ],
           color: Colors.cyan,
         ),
@@ -446,7 +434,6 @@ final slides = [
           title: "Flutter 3.0",
           contents: [
             "Tất cả 6 nền tảng (iOS, Android, web, Windows, macOS, Linux) đều stable",
-            "Ra mắt Dart 2.17 mới",
             "Giới thiệu Flutter Casual Games Tool Kit",
           ],
           color: Colors.amber,
@@ -455,8 +442,8 @@ final slides = [
           datetime: "8/2022",
           title: "Flutter 3.3 - Giới thiệu Impeller",
           contents: [
-            "Giới thiệu công cụ render mới Impeller (preview)",
-            "Hỗ trợ interop Objective-C và Swift",
+            "Giới thiệu render engine Impeller",
+            "Hỗ trợ tương tác Objective-C và Swift",
             "Cải thiện Material Design và hiệu suất",
           ],
           color: Colors.teal,
@@ -465,8 +452,8 @@ final slides = [
           datetime: "25/1/2023",
           title: "Flutter 3.7",
           contents: [
-            "Ra mắt Flutter 3.7 với Material Design 3 support nâng cao",
-            "Impeller preview cho iOS với hiệu suất cải thiện",
+            "Giới thiệu Material Design 3",
+            "Giới thiệu Impeller preview cho iOS",
             "Cải thiện scrolling và DevTools",
           ],
           color: Colors.indigo,
@@ -475,39 +462,27 @@ final slides = [
           datetime: "5/2023",
           title: "Flutter 3.10",
           contents: [
-            "Hơn một triệu ứng dụng Flutter được xuất bản toàn cầu",
+            "Hơn 1M ứng dụng Flutter được xuất bản",
             "Impeller mặc định trên iOS",
-            "Cải thiện hiệu suất web 42% thời gian tải",
+            "Cải thiện hiệu suất tải web lên 42%",
           ],
           color: Colors.lime,
         ),
         TimelineData(
           datetime: "8/2023",
-          title: "Flutter 3.13 - Cải tiến Impeller và Foldables",
+          title: "Flutter 3.13",
           contents: [
             "Cải thiện hiệu suất Impeller trên iOS (giảm 50% thời gian rasterization)",
-            "Impeller preview cho macOS",
             "API mới cho thiết bị gập (foldable devices)",
           ],
           color: Colors.brown,
         ),
-        TimelineData(
-          datetime: "5/2024",
-          title: "Flutter 3.22",
-          contents: [
-            "WebAssembly (WASM) support chính thức cho web apps",
-            "Cải thiện hiệu suất 2-3x so với JavaScript implementation",
-            "Impeller rendering engine cải tiến cho iOS",
-            "Vertex AI for Firebase Dart SDK preview",
-          ],
-          color: Colors.pink,
-        ),
+
         TimelineData(
           datetime: "11/2024",
-          title: "Flutter 3.27 - Kết thúc năm 2024",
+          title: "Flutter 3.27",
           contents: [
             "Cải tiến Cupertino widgets với iOS 15+ styles",
-            "Material Design polishing",
             "Impeller là default engine cho cả iOS và Android",
           ],
           color: Colors.deepPurple,

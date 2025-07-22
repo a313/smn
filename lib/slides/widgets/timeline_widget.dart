@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../slide.dart';
 
-const itemHeight = 150.0;
+const itemHeight = 190.0;
 const itemWidth = 300.0;
 const arrWidth = 170.0;
 const arrHeight = 70.0;
