@@ -30,7 +30,7 @@ class _TextWidgetState extends State<TextWidget> {
       padding: const EdgeInsets.all(16.0),
       child: Text(
         widget.text,
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.left,
         style: textTheme.displayMedium?.copyWith(
           color: widget.color ?? Colors.white,
           fontSize: widget.fontSize,

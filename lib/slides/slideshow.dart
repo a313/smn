@@ -64,7 +64,7 @@ class SlideshowState extends State<Slideshow> {
                     slide.backgroundImage != null
                         ? BoxDecoration(
                           image: DecorationImage(
-                            image: NetworkImage(slide.backgroundImage!),
+                            image: slide.backgroundImage!.imageProvider,
                             fit: BoxFit.cover,
                           ),
                         )

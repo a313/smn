@@ -4,7 +4,7 @@ import 'slide.dart';
 
 class SlidesProvider with ChangeNotifier {
   final List<Slide> slides;
-  int _slideIndex = 2;
+  int _slideIndex = 9;
   int _stepIndex = 0;
 
   SlidesProvider(this.slides);

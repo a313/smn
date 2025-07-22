@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'image_helper.dart';
+
 enum SlideAlignment {
   center,
   centerLeft,
@@ -38,11 +40,13 @@ extension SlideAlignmentExtension on SlideAlignment {
 }
 
 class Slide {
-  final String? backgroundImage;
+  final String tag;
+  final ImageSource? backgroundImage;
   final List<SlideContentData> content;
   final Alignment alignment;
 
   Slide({
+    required this.tag,
     this.backgroundImage,
     required this.content,
     this.alignment = Alignment.center,

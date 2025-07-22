@@ -6,9 +6,6 @@ class ChartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 400,
-      child: Padding(padding: const EdgeInsets.all(32.0), child: chart),
-    );
+    return SizedBox(height: 600, child: chart);
   }
 }
