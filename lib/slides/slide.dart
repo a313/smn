@@ -77,13 +77,13 @@ class TableContent extends SlideContentData {
 
 class TimelineData {
   final String title;
-  final String content;
+  final List<String> contents;
   final String datetime;
   final Color color;
 
   TimelineData({
     required this.title,
-    required this.content,
+    required this.contents,
     required this.datetime,
     this.color = Colors.transparent,
   });

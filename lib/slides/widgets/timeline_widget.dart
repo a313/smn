@@ -2,24 +2,37 @@ import 'package:flutter/material.dart';
 
 import '../slide.dart';
 
+const itemHeight = 150.0;
+const itemWidth = 300.0;
+const arrWidth = 170.0;
+const arrHeight = 70.0;
+
 class TimelineWidget extends StatelessWidget {
   final List<TimelineData> data;
   const TimelineWidget({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
+    const double overlapOffset = arrWidth - 10.0;
+
     return SizedBox(
-      height: 400,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: data.length,
-        itemBuilder: (context, index) {
-          return TimelineTile(
-            data: data[index],
-            isFirst: index == 0,
-            isTop: index.isEven,
-          );
-        },
+      height: 500,
+      width: (data.length * overlapOffset) + itemWidth,
+      child: Stack(
+        children:
+            data.asMap().entries.map((entry) {
+              final index = entry.key;
+              final timelineData = entry.value;
+
+              return Positioned(
+                left: index * overlapOffset,
+                child: TimelineTile(
+                  data: timelineData,
+                  isFirst: index == 0,
+                  isTop: index.isEven,
+                ),
+              );
+            }).toList(),
       ),
     );
   }
@@ -39,20 +52,22 @@ class TimelineTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double itemWidth = 250;
-    const double arrowHeight = 60;
-    const double contentHeight = 150;
-
     return SizedBox(
       width: itemWidth,
+
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          if (isTop) _buildContent(context),
-          if (isTop) const SizedBox(height: 10),
-          _buildArrow(data.color, data.datetime),
-          if (!isTop) const SizedBox(height: 10),
-          if (!isTop) _buildContent(context),
+          if (isTop) _buildContent(context, isTop),
+          if (!isTop) const SizedBox(height: itemHeight),
+          SizedBox(
+            width: arrWidth,
+            height: arrHeight,
+            child: _buildArrow(data.color, data.datetime),
+          ),
+          if (!isTop) _buildContent(context, isTop),
+          if (isTop) const SizedBox(height: itemHeight),
         ],
       ),
     );
@@ -78,25 +93,74 @@ class TimelineTile extends StatelessWidget {
     );
   }
 
-  Widget _buildContent(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          data.title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
+  Widget _buildContent(BuildContext context, bool isTop) {
+    return SizedBox(
+      height: itemHeight,
+      width: itemWidth,
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                if (!isTop) SizedBox(height: 24),
+                Text(
+                  data.title,
+                  textAlign: TextAlign.end,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                ...data.contents.map(
+                  (e) => Padding(
+                    padding: EdgeInsets.symmetric(vertical: 4),
+                    child: Text(
+                      e,
+                      style: const TextStyle(color: Colors.white70),
+                      textAlign: TextAlign.end,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          data.content,
-          textAlign: TextAlign.center,
-          style: const TextStyle(color: Colors.white70),
-        ),
-      ],
+          Container(
+            width: 12,
+            height: itemHeight,
+            margin: EdgeInsets.only(left: 8),
+
+            child: Stack(
+              children: [
+                Positioned(
+                  bottom: isTop ? 0 : null,
+                  left: 4,
+                  width: 4,
+                  child: Container(
+                    height: isTop ? itemHeight - 10 : 40,
+                    decoration: BoxDecoration(color: data.color),
+                  ),
+                ),
+                Positioned(
+                  top: isTop ? 10 : 30,
+                  left: 0,
+                  width: 12,
+                  height: 12,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: data.color,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(width: 26),
+        ],
+      ),
     );
   }
 }
@@ -115,19 +179,27 @@ class _ArrowPainter extends CustomPainter {
           ..style = PaintingStyle.fill;
 
     final path = Path();
-    final arrowWidth = 20.0;
+    const chevronWidth = 30.0;
 
-    path.moveTo(isFirst ? 0 : arrowWidth, 0);
-    path.lineTo(size.width - arrowWidth, 0);
-    path.lineTo(size.width, size.height / 2);
-    path.lineTo(size.width - arrowWidth, size.height);
-    path.lineTo(isFirst ? 0 : arrowWidth, size.height);
-
-    if (!isFirst) {
-      path.lineTo(0, size.height / 2);
+    if (isFirst) {
+      // First item: straight left edge with chevron point on right
+      path.moveTo(0, 0);
+      path.lineTo(size.width - chevronWidth, 0);
+      path.lineTo(size.width, size.height / 2);
+      path.lineTo(size.width - chevronWidth, size.height);
+      path.lineTo(0, size.height);
+      path.close();
+    } else {
+      // Other items: chevron cuts on both sides (>> shape)
+      path.moveTo(0, 0);
+      path.lineTo(chevronWidth, size.height / 2);
+      path.lineTo(0, size.height);
+      path.lineTo(size.width - chevronWidth, size.height);
+      path.lineTo(size.width, size.height / 2);
+      path.lineTo(size.width - chevronWidth, 0);
+      path.close();
     }
 
-    path.close();
     canvas.drawPath(path, paint);
   }
 

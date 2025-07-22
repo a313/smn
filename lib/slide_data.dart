@@ -1,4 +1,3 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:smn/slides/slide.dart';
 
@@ -28,229 +27,152 @@ final slides = [
       TextContent('5. Q&A', fontSize: 36),
     ],
   ),
+
   Slide(
     content: [
-      TitleContent('Dòng thời gian phát triển'),
+      TitleContent('Smart Phone and Native Timeline\n'),
       TimelineContent([
         TimelineData(
-          datetime: '29/06/2007',
-          title: 'iPhone đầu tiên',
-          content:
-              '* Apple chính thức phát hành iPhone thế hệ đầu tiên tại Mỹ\nĐánh dấu kỷ nguyên của smartphone hiện đại\n* Objective-C là ngôn ngữ chính để phát triển ứng dụng iOS và macOS',
-
-          color: Colors.deepPurple,
+          datetime: "09/01/2007",
+          title: "iPhone được công bố",
+          contents: [
+            "Steve Jobs giới thiệu iPhone tại Macworld",
+            "iPhone kết hợp iPod, điện thoại, trình duyệt",
+          ],
+          color: Colors.blue,
         ),
         TimelineData(
-          datetime: '23/9/2008',
-          title: 'Android ra mắt',
-          content:
-              '* Google chính thức công bố hệ điều hành Android\nChiếc điện thoại Android đầu tiên được giới thiệu\n* Đây là cột mốc mở đầu cho cuộc cạnh tranh giữa Android và iOS, dẫn đến sự phát triển mạnh mẽ của hệ sinh thái smartphone hiện nay.* Java là ngôn ngữ chính cho phát triển ứng dụng',
-
-          color: Colors.cyan,
+          datetime: "29/06/2007",
+          title: "iPhone đầu tiên phát hành",
+          contents: [
+            "iPhone 2G ra mắt tại Mỹ",
+            "Chạy iPhone OS 1.0, sử dụng Objective-C là ngôn ngữ phát triển chính",
+          ],
+          color: Colors.redAccent,
         ),
         TimelineData(
-          datetime: '2020',
-          title: 'Hỗ trợ Web',
-          content: 'Mở rộng khả năng phát triển cho nền tảng web.',
-
-          color: Colors.teal,
+          datetime: "06/03/2008",
+          title: "Apple giới thiệu iPhone SDK",
+          contents: [
+            "Cho phép lập trình viên bên ngoài phát triển ứng dụng",
+            "Đánh dấu sự mở cửa của nền tảng iOS",
+          ],
+          color: Colors.orange,
         ),
         TimelineData(
-          datetime: '2021',
-          title: 'Hỗ trợ Desktop',
-          content: 'Đem ứng dụng đến với Windows, macOS và Linux.',
-
+          datetime: "10/07/2008",
+          title: "App Store ra mắt",
+          contents: [
+            "Khoảng 500 ứng dụng sẵn có",
+            "Bắt đầu cuộc đua thị trường ứng dụng di động",
+          ],
+          color: Colors.lightBlue,
+        ),
+        TimelineData(
+          datetime: "23/09/2008",
+          title: "Android 1.0 chính thức ra mắt",
+          contents: [
+            "HTC Dream (T-Mobile G1) là thiết bị đầu tiên",
+            "Android Market bắt đầu hoạt động",
+          ],
           color: Colors.lightGreen,
         ),
         TimelineData(
-          datetime: '2022',
-          title: 'Cộng đồng lớn mạnh',
-          content: 'Hàng triệu nhà phát triển tin dùng và đóng góp.',
+          datetime: "22/10/2008",
+          title: "Android Market phát hành",
+          contents: [
+            "Khoảng 35 ứng dụng có sẵn",
+            "Không có hệ thống đánh giá/xếp hạng ứng dụng",
+          ],
+          color: Colors.teal,
+        ),
 
-          color: Colors.lime,
+        TimelineData(
+          datetime: "02/06/2014",
+          title: "Swift được công bố",
+          contents: [
+            "Apple giới thiệu Swift tại WWDC 2014",
+            "Hướng tới thay thế dần Objective-C",
+          ],
+          color: Colors.deepOrange,
+        ),
+
+        TimelineData(
+          datetime: "15/02/2016",
+          title: "Kotlin 1.0 phát hành",
+          contents: [
+            "JetBrains công bố phiên bản ổn định",
+            "Hoạt động trên JVM, tương thích với Java",
+          ],
+          color: Colors.purple,
         ),
         TimelineData(
-          datetime: '2023',
-          title: 'Tương lai không giới hạn',
-          content:
-              'Tiếp tục đổi mới và định hình tương lai của ứng dụng đa nền tảng.',
+          datetime: "17/05/2017",
+          title: "Kotlin thành ngôn ngữ chính thức trên Android",
+          contents: [
+            "Google công bố tại Google I/O",
+            "Được hỗ trợ hoàn toàn bởi Android Studio",
+          ],
+          color: Colors.blueGrey,
+        ),
 
-          color: Colors.red,
+        TimelineData(
+          datetime: "03/06/2019",
+          title: "SwiftUI được giới thiệu",
+          contents: [
+            "Framework mới cho UI trên iOS",
+            "Hoạt động song song với UIKit",
+          ],
+          color: Colors.pink,
+        ),
+
+        TimelineData(
+          datetime: "15/07/2025",
+          title: "Kotlin Multiplatform 2.0 ổn định",
+          contents: [
+            "Hỗ trợ đa nền tảng chính thức (Android, iOS, Desktop, Web)",
+          ],
+          color: Colors.deepPurple,
+        ),
+        TimelineData(
+          datetime: "Now",
+          title: "Hàng triệu ứng dụng đã được phát hành",
+          contents: [
+            "1,9 triệu ứng dụng trên Apple Store",
+            "3.95 triệu ứng dụng trên Google Play Store",
+          ],
+          color: Colors.pinkAccent,
         ),
       ]),
-    ],
-  ),
-  Slide(
-    alignment: Alignment.topLeft,
-    backgroundImage:
-        'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    content: [
-      TitleContent('Chào mừng đến với Trình chiếu Flutter'),
-      TextContent('Sử dụng các phím mũi tên để điều hướng.'),
     ],
   ),
   Slide(
     alignment: Alignment.centerLeft,
+    backgroundImage:
+        'https://images.unsplash.com/photo-1550751827-4133d5e30b6d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     content: [
-      TitleContent('Biểu đồ cột'),
-      TextContent('Đây là ví dụ về biểu đồ cột.'),
-      ChartContent(_buildBarChart()),
-    ],
-  ),
-  Slide(
-    content: [
-      TitleContent('Biểu đồ đường'),
-      TextContent('Đây là ví dụ về biểu đồ đường.'),
-      ChartContent(_buildLineChart()),
-    ],
-  ),
-  Slide(
-    content: [
-      TitleContent('Biểu đồ tròn'),
-      TextContent('Đây là ví dụ về biểu đồ tròn.'),
-      ChartContent(_buildPieChart()),
-    ],
-  ),
-  Slide(
-    content: [
-      TitleContent('Bảng dữ liệu'),
-      TextContent('Đây là một bảng dữ liệu đơn giản.'),
-      TableContent([
-        ['Header 1', 'Header 2', 'Header 3'],
-        ['Row 1, Cell 1', 'Row 1, Cell 2', 'Row 1, Cell 3'],
-        ['Row 2, Cell 1', 'Row 2, Cell 2', 'Row 2, Cell 3'],
-      ]),
+      TitleContent('Native là gì?', fontSize: 54),
+      TitleContent('Định nghĩa:', color: Colors.blue, fontSize: 42),
+      TextContent(
+        'Là cách ứng dụng di động được phát triển riêng cho một nền tảng (iOS hoặc Android) bằng ngôn ngữ và công cụ chính thức như Swift/Objective-C (iOS) hoặc Kotlin/Java (Android).',
+        fontSize: 32,
+      ),
+      TitleContent('Ưu điểm:', color: Colors.greenAccent, fontSize: 42),
+      TextContent(
+        '- Hiệu năng tối ưu, trải nghiệm người dùng mượt mà nhất.',
+        fontSize: 32,
+      ),
+      TextContent(
+        '- Truy cập đầy đủ tính năng của thiết bị (camera, GPS, cảm biến...).',
+        fontSize: 32,
+      ),
+      TextContent('- UI/UX chuẩn chỉnh theo từng hệ điều hành.', fontSize: 32),
+      TitleContent('Nhược điểm:', color: Colors.redAccent, fontSize: 42),
+      TextContent(
+        '- Cần 2 đội ngũ/ngôn ngữ/codebase riêng biệt (tốn kém, mất thời gian).',
+        fontSize: 32,
+      ),
+      TextContent('- Bảo trì, cập nhật phức tạp.', fontSize: 32),
     ],
   ),
 ];
-
-Widget _buildBarChart() {
-  return BarChart(
-    BarChartData(
-      alignment: BarChartAlignment.spaceAround,
-      maxY: 20,
-      barTouchData: BarTouchData(enabled: false),
-      titlesData: FlTitlesData(
-        show: true,
-        bottomTitles: AxisTitles(
-          sideTitles: SideTitles(
-            showTitles: true,
-            getTitlesWidget:
-                (value, meta) => Text(
-                  'Grp ${value.toInt()}',
-                  style: const TextStyle(color: Colors.white, fontSize: 10),
-                ),
-          ),
-        ),
-        leftTitles: AxisTitles(
-          sideTitles: SideTitles(
-            showTitles: true,
-            reservedSize: 28,
-            getTitlesWidget:
-                (value, meta) => Text(
-                  value.toInt().toString(),
-                  style: const TextStyle(color: Colors.white, fontSize: 10),
-                ),
-          ),
-        ),
-        topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-        rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-      ),
-      gridData: FlGridData(show: false),
-      borderData: FlBorderData(show: false),
-      barGroups: [
-        BarChartGroupData(
-          x: 0,
-          barRods: [BarChartRodData(toY: 8, color: Colors.lightBlueAccent)],
-        ),
-        BarChartGroupData(
-          x: 1,
-          barRods: [BarChartRodData(toY: 10, color: Colors.lightBlueAccent)],
-        ),
-        BarChartGroupData(
-          x: 2,
-          barRods: [BarChartRodData(toY: 14, color: Colors.lightBlueAccent)],
-        ),
-        BarChartGroupData(
-          x: 3,
-          barRods: [BarChartRodData(toY: 15, color: Colors.lightBlueAccent)],
-        ),
-        BarChartGroupData(
-          x: 4,
-          barRods: [BarChartRodData(toY: 13, color: Colors.lightBlueAccent)],
-        ),
-      ],
-    ),
-  );
-}
-
-Widget _buildLineChart() {
-  return LineChart(
-    LineChartData(
-      gridData: FlGridData(show: true),
-      titlesData: FlTitlesData(show: true),
-      borderData: FlBorderData(
-        show: true,
-        border: Border.all(color: const Color(0xff37434d), width: 1),
-      ),
-      minX: 0,
-      maxX: 11,
-      minY: 0,
-      maxY: 6,
-      lineBarsData: [
-        LineChartBarData(
-          spots: [
-            FlSpot(0, 3),
-            FlSpot(2.6, 2),
-            FlSpot(4.9, 5),
-            FlSpot(6.8, 3.1),
-            FlSpot(8, 4),
-            FlSpot(9.5, 3),
-            FlSpot(11, 4),
-          ],
-          isCurved: true,
-          color: Colors.blue,
-          barWidth: 5,
-          isStrokeCapRound: true,
-          dotData: FlDotData(show: false),
-          belowBarData: BarAreaData(show: false),
-        ),
-      ],
-    ),
-  );
-}
-
-Widget _buildPieChart() {
-  return PieChart(
-    PieChartData(
-      sectionsSpace: 0,
-      centerSpaceRadius: 40,
-      sections: [
-        PieChartSectionData(
-          color: Colors.blue,
-          value: 40,
-          title: '40%',
-          radius: 50,
-        ),
-        PieChartSectionData(
-          color: Colors.red,
-          value: 30,
-          title: '30%',
-          radius: 50,
-        ),
-        PieChartSectionData(
-          color: Colors.green,
-          value: 15,
-          title: '15%',
-          radius: 50,
-        ),
-        PieChartSectionData(
-          color: Colors.yellow,
-          value: 15,
-          title: '15%',
-          radius: 50,
-        ),
-      ],
-    ),
-  );
-}
