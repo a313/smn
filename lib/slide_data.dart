@@ -39,7 +39,7 @@ final slides = [
   Slide(
     tag: 'infographic',
     content: [
-      TitleContent('Smart Phone and Native Timeline\n'),
+      TitleContent('Smart Phone Timeline\n'),
       TimelineContent([
         TimelineData(
           datetime: "09/01/2007",
@@ -80,10 +80,7 @@ final slides = [
         TimelineData(
           datetime: "23/09/2008",
           title: "Android 1.0 chính thức ra mắt",
-          contents: [
-            "HTC Dream (T-Mobile G1) là thiết bị đầu tiên",
-            "Android Market bắt đầu hoạt động",
-          ],
+          contents: ["HTC Dream (T-Mobile G1) là thiết bị đầu tiên"],
           color: Colors.lightGreen,
         ),
         TimelineData(
@@ -164,7 +161,7 @@ final slides = [
           title: "Hàng triệu ứng dụng đã được phát hành",
           contents: [
             "1,9 triệu ứng dụng trên Apple Store",
-            "3,95 triệu ứng dụng trên Play Store",
+            "3,95 triệu ứng dụng trên Google Play",
           ],
           color: Colors.pinkAccent,
         ),
@@ -179,6 +176,13 @@ final slides = [
     ],
   ),
 
+  // Slide(
+  //   tag: 'smartphone_chart2',
+  //   content: [
+  //     TitleContent('Doanh thu từ ứng dụng di động\n'),
+  //     ChartContent(SmartPhoneChart2()),
+  //   ],
+  // ),
   Slide(
     tag: 'native',
     alignment: Alignment.centerLeft,
@@ -188,7 +192,7 @@ final slides = [
     content: [
       TitleContent('Native là gì?', fontSize: 54),
       TextContent(
-        'Là cách ứng dụng di động được phát triển riêng cho một nền tảng (iOS hoặc Android) bằng ngôn ngữ và công cụ chính thức như Swift/Objective-C (iOS) hoặc Kotlin/Java (Android).',
+        'Là cách ứng dụng di động được phát triển riêng cho một nền tảng.\nSử dụng ngôn ngữ và công cụ chính thức từ nhà phát hành ra nền tảng đó',
         fontSize: 32,
       ),
       TitleContent('Ưu điểm:', color: Colors.greenAccent, fontSize: 42),
@@ -378,7 +382,7 @@ final slides = [
   ),
   Slide(
     tag: 'flutter2',
-    backgroundImage: ImageSource.asset('assets/images/def_bg.jpg'),
+    backgroundImage: ImageSource.asset('assets/images/def_bg.jpeg'),
     content: [
       TitleContent('Các cột mốc phát triển của Flutter\n'),
       TimelineContent([
