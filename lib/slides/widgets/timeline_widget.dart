@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../slide.dart';
 
-const itemHeight = 190.0;
+const itemHeight = 210.0;
 const itemWidth = 300.0;
-const arrWidth = 170.0;
-const arrHeight = 70.0;
+const arrWidth = 190.0;
+const arrHeight = 90.0;
 
 class TimelineWidget extends StatelessWidget {
   final List<TimelineData> data;

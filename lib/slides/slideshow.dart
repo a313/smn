@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -45,55 +46,63 @@ class SlideshowState extends State<Slideshow> {
 
   @override
   Widget build(BuildContext context) {
-    return KeyboardListener(
-      focusNode: _focusNode,
-      onKeyEvent: _handleKeyEvent,
-      child: GestureDetector(
-        onTap: () => _focusNode.requestFocus(),
-        child: Consumer<SlidesProvider>(
-          builder: (context, slidesProvider, child) {
-            final slide = slidesProvider.currentSlide;
-            final step = slidesProvider.stepIndex;
+    return Listener(
+      onPointerDown: (event) {
+        if (event.kind == PointerDeviceKind.mouse &&
+            event.buttons == kPrimaryMouseButton) {
+          context.read<SlidesProvider>().next();
+        }
+      },
+      child: KeyboardListener(
+        focusNode: _focusNode,
+        onKeyEvent: _handleKeyEvent,
+        child: GestureDetector(
+          onTap: () => _focusNode.requestFocus(),
+          child: Consumer<SlidesProvider>(
+            builder: (context, slidesProvider, child) {
+              final slide = slidesProvider.currentSlide;
+              final step = slidesProvider.stepIndex;
 
-            return Scaffold(
-              body: Container(
-                width: double.infinity,
-                height: double.infinity,
-                padding: EdgeInsets.all(48),
-                decoration:
-                    slide.backgroundImage != null
-                        ? BoxDecoration(
-                          image: DecorationImage(
-                            image: slide.backgroundImage!.imageProvider,
-                            fit: BoxFit.cover,
-                          ),
-                        )
-                        : null,
-                child: Align(
-                  alignment: slide.alignment,
-                  child: Column(
-                    mainAxisAlignment: slide.alignment.toMainAxis,
-                    crossAxisAlignment: slide.alignment.toCrossAxis,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      ...slide.content.asMap().entries.map((entry) {
-                        final index = entry.key;
-                        final content = entry.value;
-                        return Visibility(
-                          visible: index <= step,
-                          replacement: Opacity(
-                            opacity: 0,
+              return Scaffold(
+                body: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  padding: EdgeInsets.all(48),
+                  decoration:
+                      slide.backgroundImage != null
+                          ? BoxDecoration(
+                            image: DecorationImage(
+                              image: slide.backgroundImage!.imageProvider,
+                              fit: BoxFit.cover,
+                            ),
+                          )
+                          : null,
+                  child: Align(
+                    alignment: slide.alignment,
+                    child: Column(
+                      mainAxisAlignment: slide.alignment.toMainAxis,
+                      crossAxisAlignment: slide.alignment.toCrossAxis,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ...slide.content.asMap().entries.map((entry) {
+                          final index = entry.key;
+                          final content = entry.value;
+                          return Visibility(
+                            visible: index <= step,
+                            replacement: Opacity(
+                              opacity: 0,
+                              child: ContentWidget(content: content),
+                            ),
                             child: ContentWidget(content: content),
-                          ),
-                          child: ContentWidget(content: content),
-                        );
-                      }),
-                    ],
+                          );
+                        }),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );

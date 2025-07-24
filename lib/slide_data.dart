@@ -8,31 +8,33 @@ import 'charts/smartphone_chart.dart';
 final slides = [
   Slide(
     tag: 'wellcome',
-    backgroundImage: ImageSource.network(
-      'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    ),
+    backgroundImage: ImageSource.asset('assets/images/qna_bg.jpg'),
     content: [
-      TitleContent('Seminar: Sự phát triển của mobile'),
-      TextContent('Cross platform - Flutter'),
+      TitleContent(
+        'Seminar\nSự phát triển của mobile',
+        color: Colors.deepOrange,
+      ),
+      TextContent('Cross platform - Flutter', color: Colors.deepOrangeAccent),
     ],
     alignment: Alignment.center,
   ),
   Slide(
     tag: 'agenda',
-    alignment: Alignment.centerLeft,
+    alignment: Alignment.center,
     backgroundImage: ImageSource.network(
-      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1607496220321-0c71c2fdbffb?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ),
     content: [
-      TitleContent('Mục lục', color: Colors.yellowAccent, fontSize: 54),
-      TextContent('1. Giới thiệu', fontSize: 36),
-      TextContent('2. Sự ra đời của smart phone và Native', fontSize: 36),
-      TextContent('3. Sự trỗi dậy của Cross-Platform', fontSize: 36),
+      TitleContent('Mục lục', color: Colors.purple, fontSize: 60),
+      TextContent('1. Giới thiệu', fontSize: 42),
+      TextContent('2. Sự ra đời của smart phone và Native', fontSize: 42),
+      TextContent('3. Sự trỗi dậy của Cross-Platform', fontSize: 42),
       TextContent(
         '4. Flutter: Ngôi sao đang lên của Cross-Platform',
-        fontSize: 36,
+        fontSize: 42,
       ),
-      TextContent('5. Q&A', fontSize: 36),
+
+      TextContent('5. Q&A', fontSize: 42),
     ],
   ),
 
@@ -107,7 +109,7 @@ final slides = [
           contents: [
             "Hợp nhất các nền tảng Android Market, Google Music, Google eBookstore, Google Movies",
           ],
-          color: Colors.yellowAccent,
+          color: Colors.brown,
         ),
         TimelineData(
           datetime: "02/06/2014",
@@ -176,13 +178,6 @@ final slides = [
     ],
   ),
 
-  // Slide(
-  //   tag: 'smartphone_chart2',
-  //   content: [
-  //     TitleContent('Doanh thu từ ứng dụng di động\n'),
-  //     ChartContent(SmartPhoneChart2()),
-  //   ],
-  // ),
   Slide(
     tag: 'native',
     alignment: Alignment.centerLeft,
@@ -190,51 +185,47 @@ final slides = [
       'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ),
     content: [
-      TitleContent('Native là gì?', fontSize: 54),
+      TitleContent('Native là gì?', fontSize: 60),
       TextContent(
         'Là cách ứng dụng di động được phát triển riêng cho một nền tảng.\nSử dụng ngôn ngữ và công cụ chính thức từ nhà phát hành ra nền tảng đó',
-        fontSize: 32,
+        fontSize: 38,
       ),
       TitleContent('Ưu điểm:', color: Colors.greenAccent, fontSize: 42),
       TextContent(
         '- Hiệu năng tối ưu, trải nghiệm người dùng mượt mà nhất.',
-        fontSize: 32,
+        fontSize: 38,
       ),
       TextContent(
         '- Truy cập đầy đủ tính năng của thiết bị (camera, GPS, cảm biến...).',
-        fontSize: 32,
+        fontSize: 38,
       ),
-      TextContent('- UI/UX chuẩn chỉnh theo từng hệ điều hành.', fontSize: 32),
+      TextContent('- UI/UX chuẩn chỉnh theo từng hệ điều hành.', fontSize: 38),
       TitleContent('Nhược điểm:', color: Colors.redAccent, fontSize: 42),
       TextContent(
         '- Cần 2 đội ngũ/ngôn ngữ/codebase riêng biệt (tốn kém, mất thời gian).',
-        fontSize: 32,
+        fontSize: 38,
       ),
-      TextContent('- Bảo trì, cập nhật phức tạp.', fontSize: 32),
+      TextContent('- Bảo trì, cập nhật phức tạp.', fontSize: 38),
     ],
   ),
   Slide(
     tag: 'cross-platform0',
-    backgroundImage: ImageSource.asset(
-      '/Volumes/IntelSSD/Projects/smn/assets/images/cr1.png',
-    ),
+    backgroundImage: ImageSource.asset('assets/images/cr1.png'),
     alignment: Alignment.centerLeft,
     content: [
-      TitleContent('Cross-Platform là gì?', fontSize: 54),
+      TitleContent('Cross-Platform là gì?', fontSize: 60),
       TextContent(
-        'Là phương pháp phát triển ứng dụng phần mềm có thể hoạt động trên nhiều nền tảng hoặc hệ điều hành khác nhau chỉ với một codebase duy nhất.',
-        fontSize: 32,
+        'Là phương pháp phát triển ứng dụng phần mềm có thể hoạt động trên nhiều nền tảng\nhoặc hệ điều hành khác nhau chỉ với một codebase duy nhất.',
+        fontSize: 38,
       ),
     ],
   ),
   Slide(
     tag: 'cross-platform1',
-    backgroundImage: ImageSource.asset(
-      '/Volumes/IntelSSD/Projects/smn/assets/images/cr1.png',
-    ),
+    backgroundImage: ImageSource.asset('assets/images/cr1.png'),
     alignment: Alignment.centerLeft,
     content: [
-      TitleContent('Tại sao cần Cross-Platform?', fontSize: 54),
+      TitleContent('Tại sao cần Cross-Platform?', fontSize: 60),
       TitleContent(
         '1. Tiết kiệm thời gian & chi phí',
         color: Colors.greenAccent,
@@ -242,11 +233,11 @@ final slides = [
       ),
       TextContent(
         'Viết một lần, chạy trên nhiều nền tảng (iOS, Android, Web, Desktop)',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TextContent(
         'Giảm chi phí đội ngũ kỹ thuật (chỉ cần 1 team thay vì 2)',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TitleContent(
         '2. Tốc độ ra mắt sản phẩm nhanh hơn',
@@ -255,11 +246,11 @@ final slides = [
       ),
       TextContent(
         'Dễ dàng thử nghiệm ý tưởng (MVP) và đưa ra thị trường sớm',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TextContent(
         'Phù hợp với các startup, dự án nhỏ cần phản hồi nhanh',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TitleContent(
         '3. Duy trì & cập nhật dễ dàng',
@@ -268,11 +259,11 @@ final slides = [
       ),
       TextContent(
         'Một codebase duy nhất giúp cập nhật đồng bộ và ít lỗi',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TextContent(
         'Dễ kiểm soát version và triển khai tính năng mới',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TitleContent(
         '4. Trải nghiệm người dùng thống nhất',
@@ -281,9 +272,9 @@ final slides = [
       ),
       TextContent(
         'Giao diện, logic hoạt động giống nhau trên nhiều thiết bị',
-        fontSize: 28,
+        fontSize: 32,
       ),
-      TextContent('Giữ thương hiệu & thiết kế nhất quán', fontSize: 28),
+      TextContent('Giữ thương hiệu & thiết kế nhất quán', fontSize: 32),
     ],
   ),
 
@@ -292,34 +283,34 @@ final slides = [
     backgroundImage: ImageSource.asset('assets/images/cr2.png'),
     alignment: Alignment.centerLeft,
     content: [
-      TitleContent('Lịch sử phát triển Cross-Platform', fontSize: 54),
+      TitleContent('Lịch sử phát triển Cross-Platform', fontSize: 60),
       TitleContent(
         'Hybrid Apps (Web-based):',
-        color: Colors.lightBlueAccent,
+        color: Colors.limeAccent,
         fontSize: 38,
       ),
-      TextContent('Cordova, Ionic.', fontSize: 28),
+      TextContent('Cordova, Ionic.', fontSize: 32),
       TextContent(
         'Cách hoạt động: Dùng WebView, xây dựng bằng HTML/CSS/JS.',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TextContent(
         'Ưu/nhược điểm: Phát triển nhanh, nhưng hiệu năng và trải nghiệm chưa tốt.',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TitleContent(
         'Native-like Apps:',
         color: Colors.lightGreenAccent,
         fontSize: 38,
       ),
-      TextContent('React Native, Xamarin, Flutter.', fontSize: 28),
+      TextContent('React Native, Xamarin, Flutter.', fontSize: 32),
       TextContent(
         'Cách hoạt động: Compile ra mã native hoặc sử dụng bridge.',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TextContent(
         'Ưu/nhược điểm: Gần hiệu năng Native hơn, trải nghiệm tốt hơn Hybrid.',
-        fontSize: 28,
+        fontSize: 32,
       ),
     ],
   ),
@@ -327,7 +318,7 @@ final slides = [
   Slide(
     tag: 'frameworkd_chart',
     content: [
-      TitleContent('Biểu đồ xu hướng framework cross-platform (2015-2024)\n'),
+      TitleContent('Biểu đồ xu hướng framework cross-platform (2015-2032)\n'),
       ChartContent(FrameworkTrendChart()),
     ],
   ),
@@ -340,17 +331,17 @@ final slides = [
       TitleContent('Flutter là gì', color: Colors.blue),
       TextContent(
         'Flutter là một SDK mã nguồn mở được tạo ra bởi Google.\nNó được sử dụng để phát triển các ứng dụng đa nền tảng từ một codebase duy nhất',
-        fontSize: 28,
+        fontSize: 32,
       ),
       TitleContent(
         'Ngôn ngữ & kiến trúc',
         color: Colors.yellowAccent,
         fontSize: 38,
       ),
-      TextContent('• Sử dụng ngôn ngữ Dart do Google phát triển', fontSize: 24),
+      TextContent('• Sử dụng ngôn ngữ Dart do Google phát triển', fontSize: 32),
       TextContent(
         '• Flutter sử dụng render engine Skia/Impeller để render UI tự động từng pixel, không phụ thuộc vào widget native như React Native hay Xamarin.',
-        fontSize: 24,
+        fontSize: 32,
       ),
       TitleContent(
         'Hot Reload & Widget phong phú',
@@ -359,11 +350,11 @@ final slides = [
       ),
       TextContent(
         '• Hot Reload giúp hiển thị thay đổi mã gần như ngay lập tức mà không mất trạng thái hiện tại của ứng dụng, giúp tăng tốc độ phát triển.',
-        fontSize: 24,
+        fontSize: 32,
       ),
       TextContent(
         '• Thư viện widget thiết kế đẹp mắt (Material Design, Cupertino…) với khả năng tùy chỉnh cao, giúp tạo giao diện UI linh hoạt sắc nét trên mọi nền tảng.',
-        fontSize: 24,
+        fontSize: 32,
       ),
       TitleContent(
         'Cộng đồng lớn và phát triển',
@@ -372,11 +363,11 @@ final slides = [
       ),
       TextContent(
         '• Flutter được Google duy trì và hỗ trợ cộng đồng mã nguồn mở toàn cầu, với nhiều package và plugin hỗ trợ sẵn trên pub.dev.',
-        fontSize: 24,
+        fontSize: 32,
       ),
       TextContent(
         '• Được sử dụng trong các sản phẩm cả nội bộ Google như Google Pay, Google Earth… cũng như nhiều công ty lớn như Alibaba, ByteDance.v.v.',
-        fontSize: 24,
+        fontSize: 32,
       ),
     ],
   ),
@@ -440,7 +431,7 @@ final slides = [
             "Tất cả 6 nền tảng (iOS, Android, web, Windows, macOS, Linux) đều stable",
             "Giới thiệu Flutter Casual Games Tool Kit",
           ],
-          color: Colors.amber,
+          color: Colors.redAccent,
         ),
         TimelineData(
           datetime: "8/2022",
@@ -470,7 +461,7 @@ final slides = [
             "Impeller mặc định trên iOS",
             "Cải thiện hiệu suất tải web lên 42%",
           ],
-          color: Colors.lime,
+          color: Colors.deepOrange,
         ),
         TimelineData(
           datetime: "8/2023",
@@ -483,7 +474,7 @@ final slides = [
         ),
 
         TimelineData(
-          datetime: "11/2024",
+          datetime: "11/2032",
           title: "Flutter 3.27",
           contents: [
             "Cải tiến Cupertino widgets với iOS 15+ styles",
@@ -493,7 +484,7 @@ final slides = [
         ),
         TimelineData(
           datetime: "5/2025",
-          title: "Flutter 3.32",
+          title: "Flutter 3.38",
           contents: [
             "Dart code chạy trên main thread thay vì UI thread riêng",
             "Impeller là default rendering engine trên Android",
