@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smn/charts/framework_trend.dart';
+import 'package:smn/charts/smartphone_char3.dart';
 import 'package:smn/slides/image_helper.dart';
 import 'package:smn/slides/slide.dart';
 
@@ -37,7 +38,13 @@ final slides = [
       TextContent('5. Q&A', fontSize: 42),
     ],
   ),
-
+  Slide(
+    tag: 'smartphone_chart0',
+    content: [
+      TitleContent('Thị phần hệ điều hành di động từ 2009-2025\n'),
+      ChartContent(SmartPhoneChart3()),
+    ],
+  ),
   Slide(
     tag: 'infographic',
     content: [
@@ -202,7 +209,7 @@ final slides = [
       TextContent('- UI/UX chuẩn chỉnh theo từng hệ điều hành.', fontSize: 38),
       TitleContent('Nhược điểm:', color: Colors.redAccent, fontSize: 42),
       TextContent(
-        '- Cần 2 đội ngũ/ngôn ngữ/codebase riêng biệt (tốn kém, mất thời gian).',
+        '- Cần nhiều đội ngũ/ ngôn ngữ/ codebase riêng biệt (tốn kém, mất thời gian).',
         fontSize: 38,
       ),
       TextContent('- Bảo trì, cập nhật phức tạp.', fontSize: 38),
@@ -236,7 +243,7 @@ final slides = [
         fontSize: 32,
       ),
       TextContent(
-        'Giảm chi phí đội ngũ kỹ thuật (chỉ cần 1 team thay vì 2)',
+        'Giảm chi phí đội ngũ kỹ thuật (chỉ cần 1 team thay vì nhiều)',
         fontSize: 32,
       ),
       TitleContent(
@@ -318,7 +325,7 @@ final slides = [
   Slide(
     tag: 'frameworkd_chart',
     content: [
-      TitleContent('Biểu đồ xu hướng framework cross-platform (2015-2032)\n'),
+      TitleContent('Biểu đồ xu hướng framework cross-platform (2015-2025)\n'),
       ChartContent(FrameworkTrendChart()),
     ],
   ),
