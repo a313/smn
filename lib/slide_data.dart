@@ -39,14 +39,14 @@ final slides = [
     ],
   ),
   Slide(
-    tag: 'smartphone_chart0',
+    tag: 'chart',
     content: [
       TitleContent('Thị phần hệ điều hành di động từ 2009-2025\n'),
       ChartContent(SmartPhoneChart3()),
     ],
   ),
   Slide(
-    tag: 'infographic',
+    tag: 'timeline',
     content: [
       TitleContent('Smart Phone Timeline\n'),
       TimelineContent([
@@ -178,7 +178,7 @@ final slides = [
     ],
   ),
   Slide(
-    tag: 'smartphone_chart',
+    tag: 'chart',
     content: [
       TitleContent('Số lượng người sử dụng smart phone qua các năm\n'),
       ChartContent(SmartPhoneChart()),
@@ -323,7 +323,7 @@ final slides = [
   ),
 
   Slide(
-    tag: 'frameworkd_chart',
+    tag: 'chart',
     content: [
       TitleContent('Biểu đồ xu hướng framework cross-platform (2015-2025)\n'),
       ChartContent(FrameworkTrendChart()),
@@ -379,7 +379,7 @@ final slides = [
     ],
   ),
   Slide(
-    tag: 'flutter2',
+    tag: 'timeline',
     backgroundImage: ImageSource.asset('assets/images/def_bg.jpeg'),
     content: [
       TitleContent('Các cột mốc phát triển của Flutter\n'),

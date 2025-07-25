@@ -15,24 +15,28 @@ class TimelineWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     const double overlapOffset = arrWidth - 10.0;
 
-    return SizedBox(
-      height: 500,
-      width: (data.length * overlapOffset) + itemWidth,
-      child: Stack(
-        children:
-            data.asMap().entries.map((entry) {
-              final index = entry.key;
-              final timelineData = entry.value;
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: SizedBox(
+        height: 500,
+        width: (data.length * overlapOffset) + itemWidth,
 
-              return Positioned(
-                left: index * overlapOffset,
-                child: TimelineTile(
-                  data: timelineData,
-                  isFirst: index == 0,
-                  isTop: index.isEven,
-                ),
-              );
-            }).toList(),
+        child: Stack(
+          children:
+              data.asMap().entries.map((entry) {
+                final index = entry.key;
+                final timelineData = entry.value;
+
+                return Positioned(
+                  left: index * overlapOffset,
+                  child: TimelineTile(
+                    data: timelineData,
+                    isFirst: index == 0,
+                    isTop: index.isEven,
+                  ),
+                );
+              }).toList(),
+        ),
       ),
     );
   }

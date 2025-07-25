@@ -50,7 +50,9 @@ class SlideshowState extends State<Slideshow> {
       onPointerDown: (event) {
         if (event.kind == PointerDeviceKind.mouse &&
             event.buttons == kPrimaryMouseButton) {
-          context.read<SlidesProvider>().next();
+          if (context.read<SlidesProvider>().getCurrentSlide().tag != 'chart') {
+            context.read<SlidesProvider>().next();
+          }
         }
       },
       child: KeyboardListener(
@@ -67,7 +69,7 @@ class SlideshowState extends State<Slideshow> {
                 body: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  padding: EdgeInsets.all(48),
+                  padding: EdgeInsets.all(slide.tag == 'timeline' ? 8 : 48),
                   decoration:
                       slide.backgroundImage != null
                           ? BoxDecoration(
